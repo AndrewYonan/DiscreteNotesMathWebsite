@@ -72,16 +72,46 @@ li {
 
 .content-section {
     color: rgb(65,65,65);
+    background-color: rgb(245,245,245);
     margin: auto;
     margin-top: 20px;
-    width: 95%;
+    width: 100%;
+    padding: 30px;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
 }
 
 .paragraph {
     padding: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    line-height: 2.8rem;
+    line-height: 2.5rem;
     text-indent: 50px;
-    font-size: 25px;
+    font-size: 24px;
 }
 
+.introduction {
+    background-color: rgb(245,245,245);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 5px;
+}
+
+.introduction-label {
+    position: absolute;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    font-size: 30px;
+    font-family: 'MainFont';
+    width: 200px;
+}
+
+.definition {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #ffd0b7;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    font-size: 24px;
+    padding: 20px;
+    font-family:'Times New Roman', Times, serif;
+}

@@ -4,7 +4,17 @@
         <meta charset="UTF-8">
         <title>DN</title>
         <link rel = "stylesheet" href = "../../../style.css">
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+              tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+              }
+            });
+          </script>
+          <script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
     </head>
     <body>
         <div id = "container">
@@ -17,24 +27,135 @@
                 <a href = "../../patrons.html"><button class = "nav-option">Patrons</button></a> 
             </div>
             <div class = "content-section">
+
+                <h1>Introduction</h1>
                 <div class = "paragraph">
-                    Logic is foundational to all of mathematics, forming the basis by which new ideas are developed from old ones — the process of <em>proving</em> something. A strong understanding of formal logic not only improves mathematical skills, but problem-solving and common-sense skills in general. Many students tend to "hate" or at least dislike proofs, but the goal of this unit is to demonstrate that logic, deduction, and proof can be some of the most beautiful parts of mathematics! 
+                    Logic is foundational to all of mathematics, forming the basis by which new ideas are developed from old ones — the process of <em>proving</em> something. A strong understanding of formal logic not only improves mathematical skills, but problem-solving and common-sense skills in general. Many students tend to "hate" or at least dislike proofs, but the goal of this unit is to demonstrate that logic, deduction, and proof can be some of the most beautiful and intuitive parts of mathematics! 
                     <br><br>
                     We will begin with an introduction to boolean algebra and build gradually to formal logic—the language and underlying infrastructure of all of mathematics. Key ideas include true and false statements, logical operators, deductions, valid and invalid arguments, quantifiers, and proofs in general.
                     <br><br>
                     So, what is boolean algebra?
                     <br><br>
                     In regular algebra, we operated on numbers and quantities, and we solved things like $$2x + 3 = 11$$ We had an infinite number line (and coordinate-plane) to worry about. In <em>boolean</em> algebra however, we operate on <em>boolean</em> values, of which there are just 2 possible values! 
+                </div>
+                <div class = "definition">
+                    <h3 style = "text-align: center;">Boolean values (Logical operands)</h3>
+                    \begin{align}
+                    0 &:= False \;\; \text{(Notated $F$)} \\ \\
+                    1 &:= True \;\; \text{(Notated $T$)}
+                    \end{align} 
+                </div>
+                <div class = "paragraph">
+                    In algebra we combined numbers and variables with arithmetic operations:
+                    \begin{align}
+                    1 + 2 + 3 &&& y = mx + b && Ax^2 + Bx + C
+                    \end{align}
+                    Now we'll be forming equations using boolean values. These equations won't be telling us so much about quantities and numbers, but about  <em>truth values</em> - whether certain statements and combinations of statements are true or false. Instead of arithmetic operators like $+$ and $-$, we'll have logical operators like $\lor$, $\land$, $\neg$, $\oplus$, $\implies$, $\iff$
+                </div>
+                <div class = "paragraph">
+                    Why care about logic?
+                </div>
+                <div class = "paragraph">
+                    Here are a few motivating examples:
+                </div>
+                <div class = "paragraph">
+                    1) <em>Describing and verifying compound systems of conditions</em>
+                        <br><br>
+                        <div class = "text-indent-block">
+                            — Video game logic <br>
+                            — Program termination <br>
+                            — Password creation <br>
+                            — Survery and paperwork criteria <br>
+                            — Embedded systems and state machines <br>
+                        </div>
+                        <br>
+                    2) <em>Constructing a valid argument</em>
+                        <br><br>
+                        <div class = "text-indent-block">
+                            — Proving statements and deriving equations <br>
+                            — Proving someone wrong! <br>
+                        </div>
+                        <br>
+                </div>
+                <h1>Logical Operators</h1>
+                <div class = "definition">
+                    <h3 style = "text-align: center;">AND ($\land$)</h3>
+                    \begin{align}
+                    p \land q &:= True \; \text{if and only if both $p$ and $q$ are true. $False$ otherwise.} \\ \\
+                    \end{align} 
+                    $$
+                    \begin{array}{|c|c|c|}
+                    \hline
+                    p & q & p \land q \\ 
+                    \hline
+                    T & T & T \\
+                    \hline
+                    T & F & F \\
+                    \hline
+                    F & T & F \\ 
+                    \hline
+                    F & F & F \\
+                    \hline
+                    \end{array}
+                    $$
+                </div>
+                <div class = "paragraph">
+                    Why?
+                </div>
+                <div class = "paragraph">
+                    If someone tells you that they're married and have two children, you expect <em>both</em> of those things to be true (If even one of those things is false, then their entire statement is false ($F$) and they're lying to you!).
+                </div>
+                <div class = "paragraph">
+                    The important idea is that an $AND$ statement is only true when all of its operands are true. For instance, just like the statement $A \land B$ is only true when both $A$ and $B$ are true, the statement $A \land B \land C \land \cdots \land Z$ is only true when <em>all</em> of $A,B,C, \cdots, Z$ are true.
+                </div>
+                <div class = "exercise">
+                    <h2>Exercise</h2>
+                    Translate the following statement into logical symbols and operators. Find its inverse, converse, contrapositive, and negation.
+
+                    <br><br>
+                    <strong class = "text-indent-block">
+                        "If the sun is out or the wind is blowing, it will rain tomorrow."
+                    </strong>
+                    <br><br>
+                    <div class="solution-dropdown">
+                        <button>Show/Hide Answer</button>
+                        <div class="solution">
+                            <strong>Solution: </strong> 
+
+                            We can define: $$p = \text{"the sun is out"}$$
+                    $$q = \text{"the wind is blowing"}$$
+                    $$r = \text{"it will rain tomorrow"}$$
+
+                    Then the statement becomes $$(p \lor q) \to r$$ <br>
+                    Converse: $r \to (p \lor q)$ <br>
+                    Inverse: $\neg (p \lor q) \to \neg r$
+
+                        </div>
                     </div>
-                    <div class = "definition">
-                        <h3 style = "text-align: center;">Boolean values</h3>
-                        \begin{align}
-                        0 &:= False \;\; \text{(Notated $F$)} \\ \\
-                        1 &:= True \;\; \text{(Notated $T$)}
-                        \end{align} 
+                </div>
+                <div class = "exercise">
+                    <h2>Exercise</h2>
+                    Prove the following equality: $$(p \to q) \land (p \to r) \equiv p \to (q \land r)$$
+                    <div class="solution-dropdown">
+                        <button onclick>Show/Hide Answer</button>
+                        <div class="solution">
+                            <strong>Solution: </strong> The integral of \( x^2 \) with respect to \( x \) is \( \frac{x^3}{3} + C \), where \( C \) is the constant of integration.
+                        </div>
+                    </div>
+                </div>
+                <div class = "exercise">
+                    <h2>Exercise</h2>
+                    Prove the following equality: $$(p \to q) \land (p \to r) \equiv p \to (q \land r)$$
+                    <div class="solution-dropdown">
+                        <button onclick>Show/Hide Answer</button>
+                        <div class="solution">
+                            <strong>Solution: </strong> The integral of \( x^2 \) with respect to \( x \) is \( \frac{x^3}{3} + C \), where \( C \) is the constant of integration.
+                        </div>
                     </div>
                 </div>
             </div> 
         </div>
     </body>
+    <footer class = "footer">Copyright @ 2024</footer>
+    <script src = "../../../src/main.js"></script>
 </html>

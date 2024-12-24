@@ -8,6 +8,7 @@
     src: url('fonts/Mainlux-Light\ 2.otf');
 }
 
+
 body {
     background-color: rgb(230,230,230);
 }
@@ -26,6 +27,11 @@ li {
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(100,100,100);
+}
+
+h2 {
+    text-align: center;
+    font-size: 25px;
 }
 
 #container {
@@ -81,27 +87,12 @@ li {
 }
 
 .paragraph {
+    display: block;
+    text-indent: 0px;
     padding: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 2.5rem;
-    text-indent: 50px;
     font-size: 24px;
-}
-
-.introduction {
-    background-color: rgb(245,245,245);
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-top: 5px;
-}
-
-.introduction-label {
-    position: absolute;
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    font-size: 30px;
-    font-family: 'MainFont';
-    width: 200px;
 }
 
 .definition {
@@ -114,4 +105,70 @@ li {
     font-size: 24px;
     padding: 20px;
     font-family:'Times New Roman', Times, serif;
+}
+
+.exercise {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 40px;  
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+}
+
+.text-indent-block {
+    display: block;
+    margin: auto;
+    width: 85%;
+}
+
+.exercise h2 {
+    margin-bottom: 50px;
+}
+
+.solution-dropdown {
+    margin: 10px 0;
+}
+
+.solution-dropdown button {
+    background-color: #007bff;
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.solution-dropdown button:hover {
+    background-color: #0056b3;
+}
+
+.solution {
+    display: none;
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+
+
+
+.footer {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #111;
+    background: #ddd;
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
+    padding: 50px;
+    border-bottom: 1px solid #444;
 }

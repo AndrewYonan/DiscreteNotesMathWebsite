@@ -28,7 +28,7 @@
             </div>
             <div class = "content-section">
 
-                <h1>Introduction</h1>
+                <h1 class = "section-title">Introduction</h1>
                 <div class = "paragraph">
                     Logic is foundational to all of mathematics, forming the basis by which new ideas are developed from old ones — the process of <em>proving</em> something. A strong understanding of formal logic not only improves mathematical skills, but problem-solving and common-sense skills in general. Many students tend to "hate" or at least dislike proofs, but the goal of this unit is to demonstrate that logic, deduction, and proof can be some of the most beautiful and intuitive parts of mathematics! 
                     <br><br>
@@ -60,24 +60,24 @@
                 </div>
                 <div class = "paragraph">
                     1) <em>Describing and verifying compound systems of conditions</em>
-                        <br><br>
-                        <div class = "text-indent-block">
-                            — Video game logic <br>
-                            — Program termination <br>
-                            — Password creation <br>
-                            — Survery and paperwork criteria <br>
-                            — Embedded systems and state machines <br>
-                        </div>
-                        <br>
-                    2) <em>Constructing a valid argument</em>
-                        <br><br>
-                        <div class = "text-indent-block">
-                            — Proving statements and deriving equations <br>
-                            — Proving someone wrong! <br>
-                        </div>
-                        <br>
+                    <div class = "text-indent-block">
+                        <ol class = "math-list">
+                            <li>Video Game Logic</li>
+                            <li>Program termination</li>
+                            <li>Password creation</li>
+                            <li>Survey & paperwork criteria</li>
+                            <li>Embedded systems & state machines</li>
+                        </ol>
+                    </div>
+                    2) <em>Constructing valid arguments</em>
+                    <div class = "text-indent-block">
+                        <ol class = "math-list">
+                            <li>Proving statements & deriving equations</li>
+                            <li>Proving someone wrong!</li>
+                        </ol>
+                    </div>
                 </div>
-                <h1>Logical Operators</h1>
+                <h1 class = "section-title">Logical Operators</h1>
                 <div class = "paragraph">
                     Throughout this section we will use truth-tables, which are tables showing all possible valuations (truth-values) of all the variables involved in a boolean expression. The table typically has columns for every variable and a column that shows the overal truth-value of the entire statement, given the truth-values of the individual variables.
                 </div>
@@ -263,14 +263,83 @@
                 <div class = "definition">
                     <h3 class = "definition-title">Tautology</h3>
                     <div class = "text-indent-block">
-                        A <em>tautology</em> is a (usually compound) statement that is <em>always</em> true, regardless of the truth-valuation of its variables.
+                        A <em>tautology</em> is a (usually compound) statement that is <em>always</em> true, regardless of the truth-valuation of its variables. One of the big ideas in mathematics is that what we commonly call a <em>theorem</em> is itself just a tautology! (more on this later)
+                    </div>
+                    <br>
+                </div>
+                <div class = "paragraph">
+                    Here some examples of tautologies.
+                    <div class = "text-indent-block">
+                        <ol class = "math-list">
+                            <li> $T$ </li>
+                            <li> $p \lor T$ </li>
+                            <li> $p \lor \neg p$ </li>
+                            <li> $p \implies p$ </li>
+                            <li> $(p \land q) \implies p$ </li>
+                            <li> $\neg(p \land q) \implies (\neg p \lor \neg q)$ </li>
+                        </ol>
+                    </div>
+                    If you take any one of the above statements, there is no possible way to plug in truth-values for the variables $p$ and $q$ such that the statement is $false$. These statements are always true, regardless of the values of their variables.
+                </div>
+                <div class = "text-indent-block">
+                    <div class = "paragraph">
+                        $(1)$ is trivially $true$, because the expression is just that by itself: $T$ (true). It is uncondintionally true and thus a tautology, because it's truth doesn't depend on the values of variables (the expression is a constant-value and has no variables to begin with!)
+                    </div>
+                    <div class = "paragraph">
+                        $(2)$ is $true$ because, as we've discussed with <em>disjunctions</em>, only a single operand needs to be true for the whole statement to be true, regardless of the values of the other operands. And we do have an operand that is true (always!) - the constant value $T$.
+                    </div>
+                    <div class = "paragraph">
+                        $(3)$ is $true$ because, if you have a particular statement $p$ (no matter how complex the statement $p$ is!), $p$ must either be true or false. There is no in-between, and no boolean-values other than $T$ and $F$. So, to say: either $p$ or $not$ $p$ is true, is a perfectly true statement.
+                    </div>
+                    <div class = "paragraph">
+                        $(4)$ is trivially $true$ because if a particular statement is true, then that definitely implies that that same statement is, well... $true$.
+                    </div>
+                    <div class = "paragraph">
+                        $(5)$ is $true$ because if both $p$ and $q$ are true, then that definitely implies that $p$ is true.
+                    </div>
+                    <div class = "paragraph">
+                        $(6)$ is $true$ because $\neg(p \land q)$ is logically equivalent to $\neg p \lor \neg q$ (this equivalence is simply DeMorgan's Law). If two statements are logically equivalent to eachother, well, then they're the same exact statement! And by $(4)$, when you have the same exact statement on both sides of the implication $\implies$, then the overall implication is $true$.
                     </div>
                 </div>
                 <div class = "paragraph">
-                    For example, here are a few tautalogies:
-                    <div class = "text-indent-block">
-                        
-                    </div>
+                    All of the above are intuitive arguments for why those statements are tautologies. However, to show that a statement is a tautology, you can also just write down the truth table for that statement and show that every value in the final column is 
+                    $true$ ($T$). For example, here are the truth tables for statements $(5)$ and $(6)$:
+
+                    <br><br>
+
+                    $$
+                    \begin{array}{|c|c|c|c|}
+                    \hline
+                    p & q & p \land q & (p \land q) \implies p \\
+                    \hline
+                    T & T & T & T \\
+                    \hline
+                    T & F & F & T \\ 
+                    \hline
+                    F & T & F & T \\
+                    \hline
+                    F & F & F & T \\
+                    \hline
+                    \end{array}
+                    $$
+
+                    <br>
+
+                    $$
+                    \begin{array}{|c|c|c|c|c|c|}
+                    \hline
+                    p & q & p \land q & \neg(p \land q) & \neg p \lor \neg q & \neg(p \land q) \implies \neg p \lor \neg q \\
+                    \hline
+                    T & T & T & F & F & T \\
+                    \hline
+                    T & F & F & T & T & T \\
+                    \hline
+                    F & T & F & T & T & T \\
+                    \hline
+                    F & F & F & T & T & T \\
+                    \hline
+                    \end{array}
+                    $$
                 </div>
             </div>
         </div>

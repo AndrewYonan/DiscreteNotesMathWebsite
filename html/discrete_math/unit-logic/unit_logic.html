@@ -36,7 +36,7 @@
                     <br><br>
                     So, what is boolean algebra?
                     <br><br>
-                    In regular algebra, we operated on numbers and quantities, and we solved things like $$2x + 3 = 11$$ We had an infinite number line (and coordinate-plane) to worry about. In <em>boolean</em> algebra however, we operate on <em>boolean</em> values, of which there are just 2 possible values! 
+                    In regular algebra, we operated on numbers and quantities, and we solved things like $$2x + 3 = 11$$ We had an infinite number line (and coordinate-plane) to worry about. In <em>boolean</em> algebra however, we operate on <em>boolean</em> values (also commonly called truth-values), of which there are just 2 possible values! 
                 </div>
                 <div class = "definition">
                     <h3 style = "text-align: center;">Boolean values (Logical operands)</h3>
@@ -78,8 +78,14 @@
                         <br>
                 </div>
                 <h1>Logical Operators</h1>
+                <div class = "paragraph">
+                    Throughout this section we will use truth-tables, which are tables showing all possible valuations (truth-values) of all the variables involved in a boolean expression. The table typically has columns for every variable and a column that shows the overal truth-value of the entire statement, given the truth-values of the individual variables.
+                </div>
+                <div class = "paragraph">
+                    We will begin the $4$ basic logical operators.
+                </div>
                 <div class = "definition">
-                    <h3 style = "text-align: center;">AND ($\land$)</h3>
+                    <h3 class = "definition-title">AND — Conjunction ($\land$)</h3>
                     \begin{align}
                     p \land q &:= True \; \text{if and only if both $p$ and $q$ are true. $False$ otherwise.} \\ \\
                     \end{align} 
@@ -106,56 +112,170 @@
                     If someone tells you that they're married and have two children, you expect <em>both</em> of those things to be true (If even one of those things is false, then their entire statement is false ($F$) and they're lying to you!).
                 </div>
                 <div class = "paragraph">
-                    The important idea is that an $AND$ statement is only true when all of its operands are true. For instance, just like the statement $A \land B$ is only true when both $A$ and $B$ are true, the statement $A \land B \land C \land \cdots \land Z$ is only true when <em>all</em> of $A,B,C, \cdots, Z$ are true.
+                    The important idea is that an $AND$ statement is only true when all of its operands are true (in conjunction). For instance, just like the statement $A \land B$ is only true when both $A$ and $B$ are true, the statement $$A \land B \land C \land \cdots \land Z$$ is only true when <em>all</em> of $A,B,C, \cdots, Z$ are true. Now, let's say for instance, that we know $A$ is false. Then we immediately know for a fact that the entire statement is false (even if all the other operands are true). This is because the only way such a statement is true is if <em>all</em> of its operands are true.
                 </div>
-                <div class = "exercise">
-                    <h2>Exercise</h2>
-                    Translate the following statement into logical symbols and operators. Find its inverse, converse, contrapositive, and negation.
+                <div class = "paragraph">
+                    Let's say a theme park's conditions for riding the roller coaster are (for whatever reason): You must be <br><br>
+                    <div class = "text-indent-block">
+                        1) At least 10 years old <br>
+                        2) At least 4 feet tall <br>
+                        3) At least 90 pounds <br>
+                        4) Not red-haired
+                    </div>
+                    <br>
+                    We can say that the roller coaster's elgibility criteria are a <em>conjunction</em> of $4$ seperate statements. If we let $E$ be your elgibility, then we can write the equation describing it as follows: 
+                    
+                    $$E = (\text{At least 10 years old}) \land (\text{At least 4 feet tall}) \land (\text{At least 90 pounds}) \land (\text{Not red-haired})$$
 
-                    <br><br>
-                    <strong class = "text-indent-block">
-                        "If the sun is out or the wind is blowing, it will rain tomorrow."
-                    </strong>
-                    <br><br>
-                    <div class="solution-dropdown">
-                        <button>Show/Hide Answer</button>
-                        <div class="solution">
-                            <strong>Solution: </strong> 
+                    $E$ evaluates to $true$ when all of its operands are true—namely, when each individual statement applies to you, and is thus satisfied. For instance, if you fail to satisfy even $1$ condition, then your roller-coaster elgibility evaluates to $false$.
+                </div>
 
-                            We can define: $$p = \text{"the sun is out"}$$
-                    $$q = \text{"the wind is blowing"}$$
-                    $$r = \text{"it will rain tomorrow"}$$
-
-                    Then the statement becomes $$(p \lor q) \to r$$ <br>
-                    Converse: $r \to (p \lor q)$ <br>
-                    Inverse: $\neg (p \lor q) \to \neg r$
-
-                        </div>
+                <div class = "definition">
+                    <h3 class = "definition-title">OR — Disjunction ($\lor$)</h3>
+                    \begin{align}
+                    p \lor q &:= True \; \text{if and only if at least one of $p$ and $q$ are true. $False$ otherwise.} \\ \\
+                    \end{align} 
+                    $$
+                    \begin{array}{|c|c|c|}
+                    \hline
+                    p & q & p \lor q \\ 
+                    \hline
+                    T & T & T \\
+                    \hline
+                    T & F & T \\
+                    \hline
+                    F & T & T \\ 
+                    \hline
+                    F & F & F \\
+                    \hline
+                    \end{array}
+                    $$
+                </div>
+                <div class = "paragraph">
+                    Why?
+                </div>
+                <div class = "paragraph">
+                    If someone tells you that they're married <em>or</em> have two children, then it's okay for one of those things to be false (so long as both of them aren't false), then the statement is still true and they're not lying to you.
+                </div>
+                <div class = "paragraph">
+                    The important idea here is that an $OR$ statement is true when <em>at least one</em> of its operands is true. For instance, consider the statement $$A \lor B \lor C \lor \cdots \lor Z$$ Let's say we know $A$ is true. Then we know for a fact that the entire statement is true (without having to know the truth values of any of the other variables), because at least $1$ of them is true.
+                </div>
+                <div class = "paragraph">
+                    Let's say the roller coaster's elgibility criteria form a logical <em>disjunction</em> instead. That is, to ride the roller coaster, you must be: <br><br>
+                    <div class = "text-indent-block">
+                        At least 10 years old <br>
+                        $or$ At least 4 feet tall <br>
+                        $or$ At least 90 pounds <br>
+                        $or$ Not red-haired
                     </div>
                 </div>
-                <div class = "exercise">
-                    <h2>Exercise</h2>
-                    Prove the following equality: $$(p \to q) \land (p \to r) \equiv p \to (q \land r)$$
-                    <div class="solution-dropdown">
-                        <button onclick>Show/Hide Answer</button>
-                        <div class="solution">
-                            <strong>Solution: </strong> The integral of \( x^2 \) with respect to \( x \) is \( \frac{x^3}{3} + C \), where \( C \) is the constant of integration.
-                        </div>
+                <div class = "paragraph">
+                    Then we can write your elgibility as
+                    $$E = (\text{At least 10 years old}) \lor (\text{At least 4 feet tall}) \lor (\text{At least 90 pounds}) \lor (\text{Not red-haired})$$
+                    which will evaluate to $true$ if at least one of those things (operands) is satisfied. For instance, if you're blond-haired, then you can absolutely ride the roller coaster! This is is because being blonde-haired implies that your $\text{not red-haired}$, and thus you've satisfied condition $4$. Since you satisfy at least $1$ condition, then you immediately satisfy the entire statement. Whether or not you satisfy any of the other conditions is irrelevant, because we are now dealing with a disjunction, in which case only a single operand needs to be true in order the whole statement to be true.
+                </div>
+                <div class = "definition">
+                    <h3 class = "definition-title">NOT — Negation ($\neg$)</h3>
+                    \begin{align}
+                    \neg p &:= True \; \text{if and only if $p$ is $False$. $False$ otherwise.} \\ \\
+                    \end{align} 
+                    $$
+                    \begin{array}{|c|c|}
+                    \hline
+                    p & \neg p \\ 
+                    \hline
+                    T & F \\
+                    \hline
+                    F & T \\
+                    \hline
+                    \end{array}
+                    $$
+                </div>
+                <div class = "paragraph">
+                    The $not$ ($\neg$) operator is a <em>unary</em> operator, meaning that it operates on a single operand (unlike $and$ and $or$ which are binary operators). The $not$ operator simply negates (or inverts) the truth-value of a particular operand (variable).
+                </div>
+                <div class = "paragraph">
+                    This leads us to an important and useful result:
+                </div>
+                <div class = "definition">
+                    <h3 class = "definition-title">Theorem</h3>
+                    $$\text{A statement $p$ is $True$ if and only if its negation is $False$}$$
+                </div>
+                <div class = "paragraph">
+                    This may be an obvious fact, but it will come in handy with a few challenging logic problems. Sometimes it's difficult to figure out when a particular statement is true, but it's much easier to figure out when its <em>negation</em> is false (which, according to this theorem, is a completely equivalent process!)
+                </div>
+                <div class = "paragraph">
+                    Now we are ready for one of the most fundamental ideas in logic and, adjacently, all of mathematics - the implication. The implication, in its most naked form, is just a binary operator like $and$ and $or$! It has two inputs (operands) and one output (a truth-value). But the implication has much more conceptual depth and significance attached to it.
+                </div>
+                <div class = "definition">
+                    <h3 class = "definition-title">Implication ($\implies$)</h3>
+                    <br>
+                    \begin{align}
+                    p \implies q &:= True \; \text{if and only if $p$ is $False$ or $q$ is True.}
+                    \end{align} 
+                    $$\text{($False$ otherwise)}$$ <br>
+                    $$\text{The operand $p$ is called a hypothesis}$$
+                    $$\text{The operand $q$ is called a conclusion} \\$$ <br>
+                    $$
+                    \begin{array}{|c|c|c|}
+                    \hline
+                    p & q & p \implies q \\ 
+                    \hline
+                    T & T & T \\
+                    \hline
+                    T & F & F \\
+                    \hline
+                    F & T & T \\ 
+                    \hline
+                    F & F & T \\
+                    \hline
+                    \end{array}
+                    $$
+                </div>
+                <div class = "paragraph">
+                    Why?
+                </div>
+                <div class = "paragraph">
+                    Unlike $And$, $Or$, and $Not$, this operator has a non-intuitive definition at first glance. Many students find the truth table for this operator quite confusing (and rightly so). Why is it defined this way? Why is an implication $true$ whenever <em>either</em> the hypothesis is $false$ or the conclusion is $true$? More importantly, why is it useful to define an implication this way? We will answer these questions now and continue to emphasize them as we move forward, because the concept of an implication is required to understand much of this course's later content, especially in the area of proofs. In fact, the entirety of formal logic and mathematics operate on various forms of implication. For instance, consider the solution to a typical high-school algebra problem:
+
+                    $$\begin{align}
+                    & \sqrt{x-3} = \frac{x}{4} \\
+                    \implies& x-3 = \frac{x^2}{16} \\
+                    \implies& x^2 - 16x + 48 = 0 \\
+                    \implies& (x - 4)(x - 12) = 0 \\
+                    \implies& x = 4 \;\; OR \;\; x = 12
+                    \end{align}$$
+                    
+                    Each step in the solution is an implication itself, where the truth of the previous step <em>implies</em> the truth of the next step. When you write a proof or construct some form of argument, each step is the result of an implication. In grade school, when you "showed your work" on a math problem, what you were implicitly doing was writing down a series of implications. And, to partially quell your anxiety around the word "proof", just know that <em>proving</em> something is just another way to say "show your work"! (For instance, the provided solution to the equation above can be considered a complete <em>proof</em> of the solution).
+                </div>
+                <div class = "paragraph">
+                    So what is an <em>implication</em>?
+                </div>
+                <div class = "paragraph">
+                    In the broadest sense, an implication is just an $if$-$then$ statement of the form "if $p$, then $q$". This is another way to say that "$p$ implies $q$", but in mathematics it's notated as $p \implies q$.
+                </div>
+                <div class = "paragraph">
+                    All that the statement $p \implies q$ means, is that <strong>if $p$ is true, then $q$ must also be true.</strong> A good way to think of it is that, $p$ being true <em>leads</em> to $q$ being true, or $p$ being true <em>forces</em> $q$ to be true. 
+                </div>
+                <div class = "paragraph">
+                    For now, this is all you need to know about implications, because in order to fully understand why the truth-table is the way it is (which often leaves many students confused), it helps to first understand what <em>tautalogy</em>, <em>contingency</em> and <em>contradiction</em> mean, as well as what a <em>valid</em> and <em>invalid</em> argument is.
+                </div>
+                <div class = "definition">
+                    <h3 class = "definition-title">Tautology</h3>
+                    <div class = "text-indent-block">
+                        A <em>tautology</em> is a (usually compound) statement that is <em>always</em> true, regardless of the truth-valuation of its variables.
                     </div>
                 </div>
-                <div class = "exercise">
-                    <h2>Exercise</h2>
-                    Prove the following equality: $$(p \to q) \land (p \to r) \equiv p \to (q \land r)$$
-                    <div class="solution-dropdown">
-                        <button onclick>Show/Hide Answer</button>
-                        <div class="solution">
-                            <strong>Solution: </strong> The integral of \( x^2 \) with respect to \( x \) is \( \frac{x^3}{3} + C \), where \( C \) is the constant of integration.
-                        </div>
+                <div class = "paragraph">
+                    For example, here are a few tautalogies:
+                    <div class = "text-indent-block">
+                        
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </body>
-    <footer class = "footer">Copyright @ 2024</footer>
+    <footer class = "footer">Copyright © 2025 Andrew Yonan. All rights reserved.  </footer>
+    <div class = "footer-base"></div>
     <script src = "../../../src/main.js"></script>
 </html>

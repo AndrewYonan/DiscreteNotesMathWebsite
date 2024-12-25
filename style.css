@@ -29,7 +29,7 @@ h2 {
 
 #container {
     margin:auto;
-    width: 80%;
+    width: 86%;
 }
 
 #header {
@@ -74,6 +74,7 @@ h2 {
     background-color: rgb(245,245,245);
     margin: auto;
     margin-top: 20px;
+    padding-top: 100px;
     width: 100%;
     padding: 30px;
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
@@ -81,7 +82,11 @@ h2 {
 
 .section-title {
     text-align: center;
-    margin: 50px;
+    margin: auto;
+    border-bottom: 3px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    width: 65%;
 }
 
 .paragraph {
@@ -101,6 +106,12 @@ h2 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 2.5rem;
     font-size: 24px;
+}
+
+.math-hline {
+    border-bottom: 2px solid black; 
+    margin: auto; 
+    width: 100px;
 }
 
 .link-list {
@@ -149,6 +160,12 @@ h2 {
     width: 85%;
 }
 
+.text-center-block {
+    text-align: left;
+    margin: auto;
+    width: 85%;
+}
+
 .exercise h2 {
     margin-bottom: 50px;
 }
@@ -187,7 +204,7 @@ h2 {
 .footer {
     font-family:'Times New Roman', Times, serif;
     font-size: 20px;
-    color: #111;
+    color: #555;
     background: #ddd;
     text-align: center;
     margin: auto;

@@ -82,7 +82,7 @@
                     Throughout this section we will use truth-tables, which are tables showing all possible valuations (truth-values) of all the variables involved in a boolean expression. The table typically has columns for every variable and a column that shows the overal truth-value of the entire statement, given the truth-values of the individual variables.
                 </div>
                 <div class = "paragraph">
-                    We will begin the $4$ basic logical operators.
+                    We will begin with the $4$ basic logical operators.
                 </div>
                 <div class = "definition">
                     <h3 class = "definition-title">AND — Conjunction ($\land$)</h3>
@@ -209,14 +209,13 @@
                 </div>
                 <div class = "definition">
                     <h3 class = "definition-title">Implication ($\implies$)</h3>
-                    <br>
                     \begin{align}
                     p \implies q &:= True \; \text{if and only if $p$ is $False$ or $q$ is True.}
                     \end{align} 
-                    $$\text{($False$ otherwise)}$$ <br>
-                    $$\text{The operand $p$ is called a hypothesis}$$
-                    $$\text{The operand $q$ is called a conclusion} \\$$ <br>
-                    $$
+                    <div class = "text-center-block">
+                        The operand $p$ is called a <strong>hypothesis</strong>. <br>
+                        The operand $q$ is called a <strong>conclusion</strong>.
+                    </div>
                     \begin{array}{|c|c|c|}
                     \hline
                     p & q & p \implies q \\ 
@@ -230,7 +229,6 @@
                     F & F & T \\
                     \hline
                     \end{array}
-                    $$
                 </div>
                 <div class = "paragraph">
                     Why?
@@ -246,7 +244,7 @@
                     \implies& x = 4 \;\; OR \;\; x = 12
                     \end{align}$$
                     
-                    Each step in the solution is an implication itself, where the truth of the previous step <em>implies</em> the truth of the next step. When you write a proof or construct some form of argument, each step is the result of an implication. In grade school, when you "showed your work" on a math problem, what you were implicitly doing was writing down a series of implications. And, to partially quell your anxiety around the word "proof", just know that <em>proving</em> something is just another way to say "show your work"! (For instance, the provided solution to the equation above can be considered a complete <em>proof</em> of the solution).
+                    Each step in the solution is an implication itself, where the truth of the previous step <em>implies</em> the truth of the next step. When you write a proof or construct some form of argument, each step is the result of an implication. In grade school, when you "showed your work" on a math problem, what you were implicitly doing was writing down a series of implications. And, to partially quell your anxiety around the word "proof", just know that <em>proving</em> something is just another way to say "show your work"! (For instance, the provided solution to the equation above can be considered a complete <em>proof</em>).
                 </div>
                 <div class = "paragraph">
                     So what is an <em>implication</em>?
@@ -258,14 +256,49 @@
                     All that the statement $p \implies q$ means, is that <strong>if $p$ is true, then $q$ must also be true.</strong> A good way to think of it is that, $p$ being true <em>leads</em> to $q$ being true, or $p$ being true <em>forces</em> $q$ to be true. 
                 </div>
                 <div class = "paragraph">
-                    For now, this is all you need to know about implications, because in order to fully understand why the truth-table is the way it is (which often leaves many students confused), it helps to first understand what <em>tautalogy</em>, <em>contingency</em> and <em>contradiction</em> mean, as well as what a <em>valid</em> and <em>invalid</em> argument is.
+                    It's often much more natural to get a feel for what a <em>valid</em> implication is first, rather than what a "true" implication is.
+                    <br><br>
+                    Here are some <strong>valid</strong> implications (if the LHS is true, then the RHS MUST be true as well):
+                </div>
+                <div class = "text-indent-block">
+                    <ol class = "math-list">
+                        <li>$x-1 = 5 \implies x = 6$</li>
+                        <li>$x^2 + 7x + 12 = 0 \implies (x = -3 \;\; \lor \;\; x = -4)$</li>
+                        <li>$x \geq 0 \implies x^2 \geq 0$</li>
+                        <li>$(p \lor q) \land \neg p \implies q$</li>
+                    </ol>
+                    <div class = "paragraph">
+                        $^*$Note that $(4)$ is a valid implication because, if we know that either $p$ or $q$ is true, and we know that $\neg p$ is true (in other words, $p$ is false), then $q$ has to be true.
+                    </div>
+                </div>
+                <div class = "paragraph">
+                    Here are some <strong>in-valid</strong> implications (The LHS does NOT imply the RHS):
+                </div>
+                <div class = "text-indent-block">
+                    <ol class = "math-list">
+                        <li>$x+2=0 \implies x = 5$</li>
+                        <li>$x^2 = 4 \implies x = 2$</li>
+                        <li>$x < 3 \implies x^2 < 9$</li>
+                        <li>$p \lor q \implies p$</li>
+                    </ol>
+                    <div class = "paragraph">
+                        $^*$(2) $x^2 = 4$ doesn't immediaetly imply that $x=2$, since we could have $x = -2$ as well. <br>
+                        $^*$(3) We can show that this implication is in-valid with a counter-example: $x=-10$ is less than $3$, and yet $x^2 = (-10)^2 = 100$ is not less than $9$. <br>
+                        $^*$(4) If we know that either $p$ or $q$ is true, we don't immediately know that $p$ is true. It might be the case that $p$ is false and $q$ is true.
+                    </div>
+                </div>
+                <div class = "paragraph">
+                    For now, this is all you need to know about implications, because in order to fully understand the truth-table for the implication (which confuses many students), we need to cover the difference between truth and <em>validity</em>, including what an <em>argument</em> is. We'll make a brief stop to cover <em>tautologies</em>, <em>contingencies</em>, and <em>contradictions</em>.
                 </div>
                 <div class = "definition">
                     <h3 class = "definition-title">Tautology</h3>
                     <div class = "text-indent-block">
-                        A <em>tautology</em> is a (usually compound) statement that is <em>always</em> true, regardless of the truth-valuation of its variables. One of the big ideas in mathematics is that what we commonly call a <em>theorem</em> is itself just a tautology! (more on this later)
+                        A <em>tautology</em> is a (usually compound) statement that is <em>always</em> true, regardless of the truth-valuation of its variables. 
                     </div>
                     <br>
+                </div>
+                <div class = "paragraph">
+                    One of the big ideas in mathematics is that what we commonly call a <em>theorem</em> is itself just a tautology! (this is due to the fact that "theorem" is just another word for "valid argument" or "valid implication", which we will be discussed shortly)
                 </div>
                 <div class = "paragraph">
                     Here some examples of tautologies.
@@ -341,6 +374,31 @@
                     \end{array}
                     $$
                 </div>
+                <div class = "paragraph">
+                    Statements $4, 5,$ and $6$ implications, but we can also think of them as <em>arguments</em>.
+                </div>
+                <div class = "definition">
+                    <h3 class = "definition-title">Argument</h3>
+                    <div class = "text-center-block">
+                        An <strong>argument</strong> is a set of premises $\{P_1, P_2, P_3, \cdots, P_n\}$ and a conclusion $C$, typically notated as follows, with a bar separating the premises and conclusion. The conclusion is indicated with a "therefore" ($\therefore$) symbol.
+                        $$P_1$$
+                        $$P_2$$
+                        $$P_3$$
+                        $$\vdots$$
+                        $$P_n$$
+                        <div class = "math-hline"></div>
+                        $$\therefore C$$
+                    </div>
+                </div>
+                <div class = "paragraph">
+                    An argument is said to be valid when the truth of the premises implies the truth of the conclusion. More specifically, an argument is valid when the <em>conjunction</em> of the premises implies the conclusion:
+                    $$[P_1 \land P_2 \land P_3 \land \cdots \land P_n] \implies C$$
+                    So, an argument <em>is</em> a type of implication of the form $p \implies q$. Except the hypothesis $p$ can be an entire list (conjunction) of seperate statements (which are now called premises in the context of an argument).
+                </div>
+                <div class = "paragraph">
+                    You can think of the premises as the "ingredients" allowing us to form a particular argument. Each ingredient is a logical statement on its own. For instance, here a few examples of valid arguments involing sets of premises:
+                </div>
+                
             </div>
         </div>
     </body>

@@ -166,6 +166,40 @@ h2 {
     width: 85%;
 }
 
+#truth-table-generator-title {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#truth-table-generator-container {
+    margin: auto;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#expression-input {
+    margin: auto;
+    margin-bottom: 60px;
+    padding: 10px;
+    width: 50%;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+}
+
+.tool-explanation {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .exercise h2 {
     margin-bottom: 50px;
 }

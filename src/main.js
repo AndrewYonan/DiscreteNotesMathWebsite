@@ -7,6 +7,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
 
+function process_truth_table_gen_input(textarea) {
+    const inputValue = textarea.value;
+
+            // Update the output container
+            output.textContent = inputValue; // Set raw content first
+
+            // Trigger MathJax to render the input
+            MathJax.typesetPromise([output]).catch((err) => console.error(err.message));
+}
+
+
+
+
 function set_exercise_numbers() {
     const elements = document.getElementsByClassName("exercise");
     const exercise_arr = Array.from(elements);

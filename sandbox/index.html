@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Navbar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        #content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a onclick="loadPage('home')">Home</a>
+        <a onclick="loadPage('about')">About</a>
+        <a onclick="loadPage('services')">Services</a>
+        <a onclick="loadPage('contact')">Contact</a>
+    </div>
+    <div id="content">
+        <h2>Welcome!</h2>
+        <p>Click on the navigation links to load content dynamically.</p>
+    </div>
+    <script>
+        function loadPage(page) {
+            const pages = {
+                home: "<h2>Home Page</h2><p>Welcome to the Home Page.</p>",
+                about: "<h2>About Us</h2><p>Learn more about our company.</p>",
+                services: "<h2>Services</h2><p>Discover the services we offer.</p>",
+                contact: "<h2>Contact Us</h2><p>Get in touch with us.</p>"
+            };
+            document.getElementById('content').innerHTML = pages[page];
+        }
+    </script>
+</body>
+</html>

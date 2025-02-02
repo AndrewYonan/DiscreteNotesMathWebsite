@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DN</title>
+        <link rel = "stylesheet" href = "../../../style.css">
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+              tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+              }
+            });
+          </script>
+          <script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    </head>
+    <body>
+        <div id = "container">
+            <div id = "header">Logic</div>
+            <div id = "nav-bar">
+                <a href = "../../../index.html"><button class = "nav-option">Home</button></a>
+                <a href = "../../about.html"><button class = "nav-option">About</button></a>
+                <a href = "../../topics.html"><button class = "nav-option">Topics</button></a>
+                <a href = "../../projects.html"><button class = "nav-option">Projects</button></a>
+                <a href = "../../patrons.html"><button class = "nav-option">Patrons</button></a> 
+            </div>
+
+            <div id = "unit-bar">
+                <a href = "introduction.html">
+                    <button class = "unit-bttn" id = "unit-introduction">Introduction</button>
+                </a>
+                <a href = "logical_operators.html">
+                    <button class = "unit-bttn" id = "unit-logical-operators">Logical Operators</button>
+                </a>
+                <a href = "truth_tables.html">
+                    <button class = "unit-bttn" id = "unit-truth-tables">Truth Tables</button>
+                </a>
+                <a href = "arguments.html">
+                    <button class = "unit-bttn" id = "unit-arguments">Arguments</button>
+                </a>
+                <a href = "quantifiers.html">
+                    <button class = "unit-bttn" id = "unit-quantifiers">Quantifiers</button>
+                </a>     
+            </div>
+            
+            <div class = "content-section">
+                <h1 class = "section-title">Introduction</h1>
+                <div class = "paragraph">
+                    Logic is foundational to all of mathematics, forming the basis by which new ideas are developed from old ones — the process of <em>proving</em> something. A strong understanding of formal logic not only improves mathematical skills, but problem-solving and common-sense skills in general. Many students tend to "hate" or at least dislike proofs, but the goal of this unit is to demonstrate that logic, deduction, and proof can be some of the most beautiful and intuitive parts of mathematics! 
+                    <br><br>
+                    We will begin with an introduction to boolean algebra and build gradually to formal logic—the language and underlying infrastructure of all of mathematics. Key ideas include true and false statements, logical operators, deductions, valid and invalid arguments, quantifiers, and proofs in general.
+                    <br><br>
+                    So, what is boolean algebra?
+                    <br><br>
+                    In regular algebra, we operated on numbers and quantities, and we solved things like $$2x + 3 = 11$$ We had an infinite number line (and coordinate-plane) to worry about. In <em>boolean</em> algebra however, we operate on <em>boolean</em> values (also commonly called truth-values), of which there are just 2 possible values! 
+                </div>
+                <div class = "definition">
+                    <h3 style = "text-align: center;">Boolean values (Logical operands)</h3>
+                    \begin{align}
+                    0 &:= False \;\; \text{(Notated $F$)} \\ \\
+                    1 &:= True \;\; \text{(Notated $T$)}
+                    \end{align} 
+                </div>
+                <div class = "paragraph">
+                    In algebra we combined numbers and variables with arithmetic operations:
+                    \begin{align}
+                    1 + 2 + 3 &&& y = mx + b && Ax^2 + Bx + C
+                    \end{align}
+                    Now we'll be forming equations using boolean values. These equations won't be telling us so much about quantities and numbers, but about  <em>truth values</em> - whether certain statements and combinations of statements are true or false. Instead of arithmetic operators like $+$ and $-$, we'll have logical operators like $\lor$, $\land$, $\neg$, $\oplus$, $\implies$, $\iff$
+                </div>
+                <div class = "paragraph">
+                    Why care about logic?
+                </div>
+                <div class = "paragraph">
+                    Here are a few motivating examples:
+                </div>
+                <div class = "paragraph">
+                    1) <em>Describing and verifying compound systems of conditions</em>
+                    <div class = "text-indent-block">
+                        <ol class = "math-list">
+                            <li>Video Game Logic</li>
+                            <li>Program termination</li>
+                            <li>Password creation</li>
+                            <li>Survey & paperwork criteria</li>
+                            <li>Embedded systems & state machines</li>
+                        </ol>
+                    </div>
+                    2) <em>Constructing valid arguments</em>
+                    <div class = "text-indent-block">
+                        <ol class = "math-list">
+                            <li>Proving statements & deriving equations</li>
+                            <li>Proving someone wrong!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

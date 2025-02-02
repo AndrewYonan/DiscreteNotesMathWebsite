@@ -29,7 +29,7 @@ h2 {
 
 #container {
     margin:auto;
-    width: 86%;
+    width: 80%;
 }
 
 #header {
@@ -50,6 +50,27 @@ h2 {
     flex-direction: row;
     margin-top:-30px;
     margin-left: 30px;
+}
+
+#unit-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.unit-bttn {
+    margin-right: 5px;
+    padding: 15px;
+    font-family: 'MainFont';
+    border: none;
+    font-size: 18px;
+}
+
+.unit-bttn:hover {
+    color: #fff;
+    background-color: #222;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav-option {
@@ -73,7 +94,7 @@ h2 {
     color: rgb(65,65,65);
     background-color: rgb(245,245,245);
     margin: auto;
-    margin-top: 20px;
+    margin-top: 5px;
     padding-top: 100px;
     width: 100%;
     padding: 30px;
